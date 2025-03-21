@@ -1,0 +1,19 @@
+2025-03-21 14:31:43.374 | INFO     | __main__:main:41 - Starting data preparation...
+2025-03-21 14:31:43.375 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/customers_data.csv.
+2025-03-21 14:31:43.375 | ERROR    | __main__:read_raw_data:29 - File not found: /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/customers_data.csv
+2025-03-21 14:31:43.376 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/products_data.csv.
+2025-03-21 14:31:43.376 | ERROR    | __main__:read_raw_data:29 - File not found: /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/products_data.csv
+2025-03-21 14:31:43.376 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/sales_data.csv.
+2025-03-21 14:31:43.377 | ERROR    | __main__:read_raw_data:29 - File not found: /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/sales_data.csv
+2025-03-21 14:31:43.377 | INFO     | __main__:main:45 - Data preparation complete.
+2025-03-21 14:45:07.856 | INFO     | __main__:main:41 - Starting data preparation...
+2025-03-21 14:45:07.857 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/customers_data.csv.
+2025-03-21 14:45:07.858 | ERROR    | __main__:read_raw_data:29 - File not found: /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/customers_data.csv
+2025-03-21 14:45:07.859 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/products_data.csv.
+2025-03-21 14:45:07.862 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/sales_data.csv.
+2025-03-21 14:45:07.864 | INFO     | __main__:main:45 - Data preparation complete.
+2025-03-21 14:45:53.462 | INFO     | __main__:main:41 - Starting data preparation...
+2025-03-21 14:45:53.463 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/customers_data.csv.
+2025-03-21 14:45:53.467 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/products_data.csv.
+2025-03-21 14:45:53.468 | INFO     | __main__:read_raw_data:26 - Reading raw data from /Users/stephneyaganaga/Desktop/school-assessment/smart-sales-blessing/data/raw/sales_data.csv.
+2025-03-21 14:45:53.470 | INFO     | __main__:main:45 - Data preparation complete.
