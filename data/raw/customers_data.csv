@@ -1,12 +1,12 @@
-CustomerID,Name,Region,JoinDate,LoyaltyPoints
-1001,William White,East,11/11/2021,Gold
-1002,Wylie Coyote,East,2/14/2023,Silver
-1003,Dan Brown,West,10/19/2023,Platinum
-1004,Chewbacca,West,11/9/2022,Diamond 
-1005,Dr Who,North,8/18/2023,Copper
-1006,Tiffany James,South,6/7/2021,Plastic
-1007,Susan Johnson,South,6/30/2023,Pearls
-1008,Tony Stark,North,5/1/2020,Gemstone
-1009,Jason Bourne,West,12/1/2020,Plastic
-1010,Hermione Granger,East,12/9/2022,Wood
-1011,Hermione Grager,East,12/9/2022,Stone
+CustomerID,Name,Region,JoinDate,LoyaltyPoints,PreferredContactMethod
+1001,William White,East,11/11/2021,234,email
+1002,Wylie Coyote,East,2/14/2023,8769,email
+1003,Dan Brown,West,10/19/2023,765,phone
+1004,Chewbacca,West,11/9/2022,3217,email
+1005,Dr Who,North,8/18/2023,907,phone
+1006,Tiffany James,South,6/7/2021,5489,email
+1007,Susan Johnson,South,6/30/2023,1032,phone
+1008,Tony Stark,North,5/1/2020,4489,phone
+1009,Jason Bourne,West,12/1/2020,908,email
+1010,Hermione Granger,East,12/9/2022,198,phone
+1011,Hermione Grager,East,12/9/2022,4903,email
