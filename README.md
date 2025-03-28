@@ -1,92 +1,158 @@
-# smart-sales-blessing
+# smart-store-blessing
+# 01-git-pull-before-changes.md
 
-Starter files to initialize the smart sales project.
+Before making any changes to a project, ALWAYS pull the latest changes from the remote repository on GitHub. Keep both locations up-to-date and in sync. 
 
------
+Pulling ensures that:
+- You work with the latest code.
+- Merge conflicts are minimized.
+- Collaboration stays smooth.
 
-## Project Setup Guide (1-Mac/Linux)
+## Before Starting
 
-Run all commands from a terminal in the root project folder. 
+Open your project repository in VS Code. 
 
-### Step 1A - Create a Local Project Virtual Environment
+We'll open a new terminal in VS Code and run a single command. 
+
+## Task 1. Pull Changes
+
+Run the following command from the project root directory. 
+The command works in PowerShell, bash, zsh, Git Bash, and more. 
 
 ```shell
-python3 -m venv .venv
+git pull origin main
 ```
 
-### Step 1B - Activate the Virtual Environment
+Once configured, you might find that a shorter version works as well: `git pull`
 
-```shell
-source .venv/bin/activate
-```
+Review the output for updates or conflicts. 
+If there are conflicts, resolve them before proceeding.
+The best solution to merge conflicts is to AVOID them through a good workflow. 
+# 02-activate-virtual-environment.md
 
-### Step 1C - Install Packages
+ALWAYS activate the .venv before working on the project.Activate whenever you open a new terminal. 
 
-```shell
-python3 -m pip install --upgrade -r requirements.txt
-```
+## Before Starting
 
-### Step 1D - Optional: Verify .venv Setup
+Open your project repository in VS Code. 
 
-```shell
-python3 -m datafun_venv_checker.venv_checker
-```
+We'll open a new terminal in VS Code and run a single command. 
 
-### Step 1E - Run the initial project script
+## Windows Machines: Task 1. Activate
 
-```shell
-python3 scripts/data_prep.py
-```
+Run the following command from the project root directory. 
+The command works in PowerShell.
 
------
-
-## Project Setup Guide (2-Windows)
-
-Run all commands from a PowerShell terminal in the root project folder.
-
-### Step 2A - Create a Local Project Virtual Environment
-
-```shell
-py -m venv .venv
-```
-
-### Step 2B - Activate the Virtual Environment
-
-```shell
+```powershell
 .venv\Scripts\activate
 ```
 
-### Step 2C - Install Packages
+## Mac/Linux Machines: Task 1. Activate
 
-```shell
-py -m pip install --upgrade -r requirements.txt
+Run the following command from the project root directory. 
+The command works in zsh, bash, and more.
+
+```powershell
+source .venv/bin/activate
 ```
 
-### Step 2D - Optional: Verify .venv Setup
+## Verify
+Confirm activation by checking that the terminal shows the environment name (e.g., (venv)).
 
-```shell
-py -m datafun_venv_checker.venv_checker
+## Recommendation
+
+This command is a bit harder to memorize. Use the UP ARROW key to access prior commands in the terminal and keep good notes in your README.md files. 
+# 03-install-dependencies.md
+
+This page explains how to install external dependencies for a Python project. 
+
+## Python Standard Library
+We do not need to install packages from the Python Standard Library - they are included with our version. The standard library includes helpful packages like pathlib, sqlite3, os, sys, time, and more. See the index. 
+
+## External Dependencies
+External dependencies are libraries, packages, and modules beyond the standard library and include common packages like pandas, numpy, seaborn, and matplotlib. 
+
+These must be installed into our local project virtual environment to use them in our code. 
+
+## Before Starting
+
+Open your project repository in VS Code. 
+Open a terminal. 
+We must activate the .venv - if you've already done so, you don't need to rerun that command. 
+
+
+## Windows Task 1: Activate/Upgrade/Install
+
+1. Ensure .venv is active.
+2. Update key packages.
+3. Install dependencies from the requirements.txt file.
+
+Run the following commands from the project root directory. 
+The commands work in PowerShell.
+
+```powershell
+.\.venv\Scripts\activate
+py -m pip install --upgrade pip setuptools wheel
+py -m pip install -r requirements.txt
 ```
 
-### Step 2E - Run the initial project script
 
-```shell
-py scripts/data_prep.py
+## Mac/Linux Task 1: Activate/Upgrade/Install
+
+1. Ensure .venv is active.
+2. Update key packages.
+3. Install dependencies from the requirements.txt file.
+
+Run the following commands from the project root directory. 
+The commands work in zsh, bash, and more.
+
+```powershell
+source .venv/bin/activate
+python3 -m pip install --upgrade pip setuptools wheel
+python3 -m pip install -r requirements.txt
 ```
 
------
+## Dependencies Evolve Over Time
+Which external packages we need tend to evolve over time.
+We don't always know the full list when we begin. 
+For example, it's common to add in matplotlib or seaborn once we have interesting results to visualize.
 
-## Initial Package List
+## Experience
+Learn how and when to add external dependencies to requirements.txt and repeat this process as needed to make use of the powerful free ecosystem for Python projects. 
+Explore popular external packages like requests and more to see why they get used. 
+# 06-git-add-commit-push.md
 
-- pip
-- loguru
-- ipykernel
-- jupyterlab
-- numpy
-- pandas
-- matplotlib
-- seaborn
-- plotly
-- pyspark==4.0.0.dev1
-- pyspark[sql]
-- git+https://github.com/denisecase/datafun-venv-checker.git#egg=datafun_venv_checker
+This page provides instructions to add files to version control, commit changes, and push them to your remote repository.
+
+- git add - stages changes, adds files to source control
+- git commit - creates a labeled snapshot of staged changes.
+- git push - updates the remote repository
+
+## Before Starting
+
+Ensure your project repository is open in VS Code, and you have made useful changes.
+
+## Task 1. Git add-commit-push
+
+Using a terminal in VS Code (PowerShell, zsh, or bash).
+
+IMPORTANT: 
+Replace the commit message with a clear and descriptive note about what you added or changed.
+Wrap the commit message in double quotes. 
+
+```shell
+git add .
+git commit -m "Add .gitignore and requirements.txt files"
+git push -u origin main
+```
+
+After subsequent changes, you may be able to use a simpler version of the last command:
+
+```shell
+git push
+``` 
+
+
+## Experience
+
+Experience comes from executing these commands frequently after making useful changes to a project. 
