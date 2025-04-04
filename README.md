@@ -215,7 +215,8 @@ To set up the SQLite data warehouse:
 
 
 ### Products Table
-![Products Table](images/products new.png)
+![Products Table](images/products.png)
+
 
 ### Customers Table
 ![Customers Table](images/customer.png)
