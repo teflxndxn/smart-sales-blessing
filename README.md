@@ -211,3 +211,11 @@ To set up the SQLite data warehouse:
 
 
 ![Database Table Preview](images/sales.png)
+## Database Table Preview
+
+
+### Products Table
+![Products Table](images/products new.png)
+
+### Customers Table
+![Customers Table](images/customer.png)
