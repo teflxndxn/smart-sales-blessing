@@ -156,3 +156,56 @@ git push
 ## Experience
 
 Experience comes from executing these commands frequently after making useful changes to a project. 
+# SQLite Data Warehouse
+
+## Project Overview
+
+This project involves designing and implementing a **Data Warehouse** using SQLite. It includes:
+
+- Schema creation
+- ETL (Extract, Transform, Load) scripting
+- Data validation and testing
+
+## Database Schema
+
+The schema is designed to support efficient data storage and retrieval. The key components include:
+
+- **Fact Tables**: Stores transactional data.
+- **Dimension Tables**: Contains categorical details for analysis.
+
+## ETL Process
+
+The ETL pipeline follows these stages:
+
+1. **Extract**: Data is sourced from various input sources.
+2. **Transform**: Data is cleaned and formatted to match the schema.
+3. **Load**: Transformed data is inserted into the warehouse.
+
+## Validation & Testing
+
+- **Schema validation** ensures data integrity.
+- **Automated testing** checks for consistency and accuracy.
+- **Performance benchmarking** ensures optimized queries.
+
+## Setup & Installation
+
+To set up the SQLite data warehouse:
+
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/yourusername/your-repository.git
+   ```
+2. Install SQLite if not already installed.
+3. Execute the schema script using Python 3:
+   ```sh
+   python3 scripts/etl_to_dw.py
+   ```
+
+## Usage Instructions
+
+- Run ETL scripts using Python or shell scripts.
+- Query data using SQL for reporting and analytics.
+- Validate results with test scripts.
+
+## database table preview
+
