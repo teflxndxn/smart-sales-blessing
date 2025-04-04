@@ -193,7 +193,7 @@ To set up the SQLite data warehouse:
 
 1. Clone this repository:
    ```sh
-   git clone https://github.com/yourusername/your-repository.git
+   git clone https://github.com/teflxndxn/smart-sales-blessing
    ```
 2. Install SQLite if not already installed.
 3. Execute the schema script using Python 3:
