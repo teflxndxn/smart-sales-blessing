@@ -207,6 +207,7 @@ To set up the SQLite data warehouse:
 - Query data using SQL for reporting and analytics.
 - Validate results with test scripts.
 
-## database table preview
+## Database Table Preview
 
-![Database Table Preview](images/sale.png)
+
+![Database Table Preview](images/sales.png)
