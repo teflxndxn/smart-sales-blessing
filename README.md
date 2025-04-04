@@ -209,3 +209,4 @@ To set up the SQLite data warehouse:
 
 ## database table preview
 
+![Database Table Preview](images/sale.png)
