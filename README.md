@@ -224,3 +224,46 @@ To set up the SQLite data warehouse:
 
 ### Customers Table
 ![Customers Table](images/customer.png)
+
+
+
+### 📊 SQL Queries and Reports
+
+To generate meaningful insights, I used **Spark SQL** to join the three main tables: `sale`, `product`, and `customer`. This allowed me to combine data across the tables—for example, using product categories from the `product` table and region information from the `customer` table—so I could analyze sales more effectively.
+
+One of the key queries I used was to calculate the **total amount spent by each customer**. This involved joining the `sale` and `customer` tables and grouping the data by customer name:
+
+```python
+df_top_customers = spark.sql("""
+SELECT c.name, SUM(s.sale_amount) AS total_spent
+FROM sale s
+JOIN customer c ON s.customer_id = c.customer_id
+GROUP BY c.name
+ORDER BY total_spent DESC
+""")
+This query helped identify the top customers based on how much they spent. I then converted the results into a Pandas DataFrame so I could visualize the data using a bar chart.
+
+Additional queries were used for slicing and dicing the data—such as grouping sales by region and product category, and filtering by date range—to support interactive visualizations and deeper analysis.
+
+### Dashboard Design Choices
+
+For the dashboard, my main design choice was to provide a clear and simple **graphical representation of customers and their total spending**. I used a bar chart to display the top customers based on the total amount they spent, making it easy to compare their spending at a glance.
+
+This approach was chosen because it highlights key insights quickly and visually, which is helpful for identifying high-value customers and understanding spending trends without digging through raw data.
+
+
+### Screenshot of Spark SQL Schema
+
+![Spark SQL Schema](images/schema.png)
+
+### Screenshot of Query Results
+Below is a screenshot showing the results of the Spark SQL query:
+
+![Query Results](images/query_result.png)
+
+## Screenshot of Final Dashboard/Charts
+
+![Final Dashboard](images/dashboard.png)
+
+
+
