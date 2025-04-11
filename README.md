@@ -251,15 +251,11 @@ For the dashboard, my main design choice was to provide a clear and simple **gra
 
 This approach was chosen because it highlights key insights quickly and visually, which is helpful for identifying high-value customers and understanding spending trends without digging through raw data.
 
-
 ### Screenshot of Spark SQL Schema
 
 ![Spark SQL Schema](images/schema.png)
 
----
-
 ### Screenshot of Query Results
-
 Below are screenshots showing the results of different Spark SQL queries:
 
 **1. Overall Sales Query Result**  
@@ -271,9 +267,5 @@ Below are screenshots showing the results of different Spark SQL queries:
 **3. Sales by Category and Region**  
 ![Query Result 3](images/query_resultss.png)
 
----
-
 ## Screenshot of Final Dashboard/Charts
-
 ![Final Dashboard](images/dashboard.png)
-
