@@ -256,14 +256,24 @@ This approach was chosen because it highlights key insights quickly and visually
 
 ![Spark SQL Schema](images/schema.png)
 
-### Screenshot of Query Results
-Below is a screenshot showing the results of the Spark SQL query:
+---
 
-![Query Results](images/query_result.png)
+### Screenshot of Query Results
+
+Below are screenshots showing the results of different Spark SQL queries:
+
+**1. Overall Sales Query Result**  
+![Query Result 1](images/query_result.png)
+
+**2. Top Customers Query Result**  
+![Query Result 2](images/query_results.png)
+
+**3. Sales by Category and Region**  
+![Query Result 3](images/query_resultss.png)
+
+---
 
 ## Screenshot of Final Dashboard/Charts
 
 ![Final Dashboard](images/dashboard.png)
-
-
 
