@@ -241,6 +241,7 @@ JOIN customer c ON s.customer_id = c.customer_id
 GROUP BY c.name
 ORDER BY total_spent DESC
 """)
+```
 This query helped identify the top customers based on how much they spent. I then converted the results into a Pandas DataFrame so I could visualize the data using a bar chart.
 
 Additional queries were used for slicing and dicing the data—such as grouping sales by region and product category, and filtering by date range—to support interactive visualizations and deeper analysis.
