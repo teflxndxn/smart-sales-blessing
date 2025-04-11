@@ -255,6 +255,8 @@ This approach was chosen because it highlights key insights quickly and visually
 
 ![Spark SQL Schema](images/schema.png)
 
+---
+
 ### Screenshot of Query Results
 Below are screenshots showing the results of different Spark SQL queries:
 
@@ -267,5 +269,9 @@ Below are screenshots showing the results of different Spark SQL queries:
 **3. Sales by Category and Region**  
 ![Query Result 3](images/query_resultss.png)
 
+---
+
 ## Screenshot of Final Dashboard/Charts
 ![Final Dashboard](images/dashboard.png)
+
+
