@@ -274,4 +274,83 @@ Below are screenshots showing the results of different Spark SQL queries:
 ## Screenshot of Final Dashboard/Charts
 ![Final Dashboard](images/dashboard.png)
 
+---
 
+## 📊 OLAP Analysis – Smart Sales Project (Module 6)
+
+### ✅ Section 1: The Business Goal
+
+**Business Question:**  
+Which product categories generate the highest sales by month?
+
+**Why it matters:**  
+Understanding how each product category performs over time helps the business align inventory, adjust marketing strategies, and anticipate demand fluctuations across the year.
+
+---
+
+### 🗃️ Section 2: Data Source
+
+**Data Source Used:**  
+- SQLite Data Warehouse (`smart_sales.db`)
+
+**Tables Used:**
+
+| Table     | Columns Used               | Transformation                       |
+|-----------|----------------------------|--------------------------------------|
+| `sale`    | `sale_date`, `sale_amount`, `product_id` | Parsed date into `month`, `year`, `quarter` |
+| `product` | `product_id`, `category`   | Joined to map category               |
+| `customer`| *Loaded but not used*      | —                                    |
+
+**Joins:**  
+- `sale` joined with `product` on `product_id`
+
+---
+
+### 🛠️ Section 3: Tools
+
+**Tools Used:**
+- PySpark (OLAP-style query and data transformation)
+- Seaborn & Matplotlib (Visualization)
+- Pandas (Time series and heatmap analysis)
+- SQLite3 (Direct SQL queries via Pandas)
+
+**Why These Tools?**
+- PySpark handles large data with efficient OLAP-style transformations.
+- Seaborn/Matplotlib provides detailed, clean plots.
+- Pandas simplifies time-based aggregations and pivot tables.
+
+---
+
+### 🧠 Section 4: Workflow & Logic
+
+#### OLAP Techniques Used:
+
+| Technique     | Implementation                                 |
+|---------------|------------------------------------------------|
+| Slicing       | Filtered by product `category`                |
+| Dicing        | Grouped by `category` and `month`             |
+| Drilldown     | Parsed `sale_date` into `year`, `month`, `quarter` |
+
+#### Aggregations:
+
+- Total Sales (`sum(sale_amount)`) grouped by category and month
+- Rolling Averages over time using Pandas
+
+#### Workflow Summary:
+
+1. Load tables using JDBC and Spark
+2. Join sales and product tables to associate categories
+3. Parse and extract time dimensions (month, year)
+4. Aggregate sales by category and month
+5. Visualize using bar plots, time series line charts, and heatmaps
+
+---
+
+### 📈 Section 5: Results & Visualizations
+
+#### 📊 Total Sales by Product Category
+
+- **Bar Chart:** ![Category Sales](images/category.png)
+- **Line Chart – Sales Over Time:** ![Sales Over Time](images/sales_over_time.png)
+- **Rolling Average Plot:** ![Rolling Average](images/rolling_average.png)
+- **Heatmap of Sales Trends:** ![Heatmap](images/heatmap.png)
