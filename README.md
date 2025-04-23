@@ -355,3 +355,84 @@ Understanding how each product category performs over time helps the business al
 - **Line Chart – Sales Over Time:** ![Sales Over Time](images/sales_over_time.png)
 - **Rolling Average Plot:** ![Rolling Average](images/rolling_average.png)
 - **Heatmap of Sales Trends:** ![Heatmap](images/heatmap.png)
+
+# Module 7 BI Project
+
+## 1. The Business Goal
+Identify the most profitable product by month and region to guide marketing and sales strategies.
+
+## 2. Data Source
+The data is sourced from a local SQLite database `smart_sales.db`, consisting of:
+- `sale` table: transactional data
+- `product` table: product details
+- `customer` table: regional and customer data
+
+## 3. Tools Used
+- **PySpark**: For data extraction, transformation, and aggregations
+- **SQLite**: Data warehouse backend
+- **Matplotlib & Seaborn**: Data visualizations
+- **Pandas**: Data transformation for plotting
+
+## 4. Workflow & Logic
+1. Connect to SQLite and read tables
+2. Join tables to create a star schema view
+3. Calculate revenue and estimated profit
+4. Group data by product, month, and region
+5. Visualize top products and regional trends
+6. Rank products using window functions
+7. Export and save visual insights
+
+## 5. Results
+- Top revenue-generating products were identified
+- Seasonal/monthly trends visualized
+- Product performance compared across regions
+- Profitability rankings calculated and visualized
+
+![Revenue by Product and Month](visuals/revenue_by_product_month.png)
+![Revenue by Region for Top 3 Products](visuals/revenue_by_region_top3.png)
+![Peak Revenue Month](visuals/peak_revenue_month_per_product.png)
+## Profit Margin Analysis
+
+The following bar plot shows the average profit margin by product and month:
+
+![Profit Margin by Product and Month](visuals/profit_margin_by_product_month.png)
+
+## Profit Margin Heatmap
+
+The heatmap below visualizes the average profit margin by product and region:
+
+![Profit Margin Heatmap](visuals/profit_margin_heatmap.png)
+
+## Customer Segmentation: Total Profit by Segment
+
+This bar chart presents the total profit by customer segment:
+![Total Profit by Customer Segment](visuals/customer_segment_profit.png)
+
+
+## 6. Suggested Business Action
+Focus marketing campaigns on high-performing products in their peak months and strongest regions. Investigate underperforming products for possible phase-out or repositioning.
+
+## 7. Challenges
+- Estimating profit margin due to lack of actual cost data
+- Data quality from SQLite sources (e.g., inconsistent dates)
+- Handling missing values or parsing errors
+
+## 8. Ethical Considerations
+- Profitability was estimated and should not be used for automated decisions without validation
+- Possible regional sales bias based on sample data
+- Responsible usage: Combine this insight with qualitative input before acting
+
+## Ethics & AI Reflection
+
+- **Is the data being used responsibly?**  
+  Yes. The sales data was used solely to identify trends and improve business decisions like product promotion and regional marketing. No personally identifiable customer data was exposed or exploited.
+
+- **Could the analysis reinforce biases?**  
+  Possibly — if certain regions or customer segments are consistently ranked as low performers, decisions based on those rankings could reduce investment in those areas, reinforcing existing disparities. It's important to complement data insights with local business context.
+
+- **Are you making decisions based on incomplete or unverified data?**  
+  To some extent, yes. While the data is structured and analyzed thoroughly, it’s historical and may not capture real-time changes, customer sentiment, or competitor behavior. Any final decisions should be supplemented with additional market research.
+
+- **How can the business use the insights responsibly?**  
+  Insights should be used to improve customer experience, optimize inventory, and promote inclusivity across regions. Rather than cutting support for underperforming areas, businesses can use this data to understand root causes and offer targeted improvements.
+
