@@ -362,91 +362,65 @@ Understanding how each product category performs over time helps the business al
 Identify the most profitable product by month and region to guide marketing and sales strategies.
 
 ## 2. Data Source
-The data is sourced from prepared CSV datasets:
+The data is sourced from a local SQLite database `smart_sales.db`, consisting of:
+- `sale` table: transactional data
+- `product` table: product details
+- `customer` table: regional and customer data
 
--Sales Data:
-/data/prepared/sales_data_prepared.csv
-Contains records of product sales, including quantities, sale amounts, and sale dates.
--Products Data:
-/data/prepared/products_data_prepared.csv
-Contains product details including names and unit prices.
--Customers Data:
-/data/prepared/customers_data_prepared.csv
-Contains customer IDs and their associated regions.
 ## 3. Tools Used
-PySpark: For large-scale data transformation and aggregation.
-Pandas: For further data wrangling and merging.
-Matplotlib & Seaborn: For creating visualizations.
-Jupyter Notebook: As the interactive development environment.
-Python 3: For all coding tasks.
+- **PySpark**: For data extraction, transformation, and aggregations
+- **SQLite**: Data warehouse backend
+- **Matplotlib & Seaborn**: Data visualizations
+- **Pandas**: Data transformation for plotting
 
-#4. Workflow & Logic
+## 4. Workflow & Logic
+1. Connect to SQLite and read tables
+2. Join tables to create a star schema view
+3. Calculate revenue and estimated profit
+4. Group data by product, month, and region
+5. Visualize top products and regional trends
+6. Rank products using window functions
+7. Export and save visual insights
 
--Loading & Preparing Data:
-Data is read using PySpark and Pandas.
-Sales, products, and customer data are merged into one dataset.
--Feature Engineering:
-Revenue = SaleAmount × UnitPrice
-Profitability = Revenue - 10% Cost Estimate
-Profit Margin = (Profitability / Revenue) × 100
-Month and Region extracted for trend analysis.
--Aggregations:
-Grouping by Product, Month, and Region for total revenue, profitability, and sales volume.
--Visualizations:
-Bar charts, heatmaps, bubble charts, and line plots used to explore and explain trends.
 ## 5. Results
--Top Profitable Products:
-Certain products consistently outperformed others across months and regions.
--Regional Trends:
-Some regions contributed disproportionately to revenue and sales, revealing key target markets.
--Monthly Seasonality:
-Sales volume and revenue varied month-to-month, indicating seasonal buying behavior.
-#### 📊 1. Total Profitability by Product and Month
+- Top revenue-generating products were identified
+- Seasonal/monthly trends visualized
+- Product performance compared across regions
+- Profitability rankings calculated and visualized
 
-![Total Profitability by Product and Month](visuals/profitability_by_product_and_month.png)
+![Revenue by Product and Month](visuals/revenue_by_product_month.png)
+![Revenue by Region for Top 3 Products](visuals/revenue_by_region_top3.png)
+![Peak Revenue Month](visuals/peak_revenue_month_per_product.png)
+## Profit Margin Analysis
 
----
+The following bar plot shows the average profit margin by product and month:
 
-####  2. Sales Volume vs Revenue (Bubble Chart)
+![Profit Margin by Product and Month](visuals/profit_margin_by_product_month.png)
 
-![Sales Volume vs Revenue (Bubble Chart)](visuals/bubble_sales_volume_vs_revenue.png)
+## Profit Margin Heatmap
 
----
+The heatmap below visualizes the average profit margin by product and region:
 
-#### 3. Revenue by Month and Region (Heatmap)
+![Profit Margin Heatmap](visuals/profit_margin_heatmap.png)
 
-![Revenue by Month and Region](visuals/heatmap_revenue_by_month_region.png)
+## Customer Segmentation: Total Profit by Segment
 
----
-
-####  4. Revenue by Customer Region
-
-![Revenue by Customer Region](visuals/revenue_by_region.png)
-
----
-
-####  5. Stacked Bar Chart of Profitability by Region and Month
-
-![Stacked Bar Chart of Profitability by Region and Month](visuals/product_profit_by_region_month.png)
-
+This bar chart presents the total profit by customer segment:
+![Total Profit by Customer Segment](visuals/customer_segment_profit.png)
 
 
 ## 6. Suggested Business Action
-Double down on high-performing products by increasing marketing budget in top-performing regions.
-Reassess low-performing products and explore if pricing, packaging, or discontinuation is needed.
-Optimize inventory planning based on monthly and regional sales trends.
-Target marketing campaigns seasonally for peak months.
+Focus marketing campaigns on high-performing products in their peak months and strongest regions. Investigate underperforming products for possible phase-out or repositioning.
 
 ## 7. Challenges
--Missing Unit Cost data required assumption of 10% cost for profitability calculation.
--Data Cleaning: Ensuring consistent date formats and joining datasets across different keys.
--Visualization Scaling: Managing readability of charts with many product names and regions.
-
+- Estimating profit margin due to lack of actual cost data
+- Data quality from SQLite sources (e.g., inconsistent dates)
+- Handling missing values or parsing errors
 
 ## 8. Ethical Considerations
--Customer Privacy: No sensitive customer data (like names or addresses) was included or used.
--Fair Targeting: Ensure marketing strategies do not discriminate against underrepresented regions.
--AI & Bias: Assumptions like fixed profit margin percentages should be validated against real-world data to avoid misleading business decisions.
+- Profitability was estimated and should not be used for automated decisions without validation
+- Possible regional sales bias based on sample data
+- Responsible usage: Combine this insight with qualitative input before acting
 
 ## Ethics & AI Reflection
 
@@ -461,3 +435,4 @@ Target marketing campaigns seasonally for peak months.
 
 - **How can the business use the insights responsibly?**  
   Insights should be used to improve customer experience, optimize inventory, and promote inclusivity across regions. Rather than cutting support for underperforming areas, businesses can use this data to understand root causes and offer targeted improvements.
+
